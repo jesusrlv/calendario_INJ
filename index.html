@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="../assets/js/color-modes.js"></script>
+  <head><script src="assets/js/color-modes.js"></script>
+
+    <link rel="icon" type="image/png" href="img/icon.ico"/>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +13,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -231,7 +234,7 @@
     <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
       <div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="sidebarMenuLabel">INJUVENTUD</h5>
+          <h5 class="offcanvas-title" id="sidebarMenuLabel"><img src="img/logo_injuventud_0.png" class="" width="30" height="30" alt=""> INJUVENTUD</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
@@ -322,7 +325,604 @@
         </div>
       </div>
 
-      <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+      <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
+      <div class="row">
+        <div class="col-4">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-event-fill"></i></span>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Mes</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-event-fill"></i></span>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Año</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="bi bi-clipboard-check-fill"></i></span>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Área</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <div class="calendar">
+       
+        <div class="row">
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+
+            <div class="col">
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4 my-auto">
+                    <h1 class="text-center">1</h1>
+                  </div>
+                  <div class="col-md-8 bg-primary">
+                    <div class="card-body">
+                      <h5 class="card-title text-light">Domingo</h5>
+                      <p class="card-text text-light">Actividades</p>
+                      <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!--col-->
+        </div><!--row interno-->
+       
+        <div class="row">
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+
+            <div class="col">
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4 my-auto">
+                    <h1 class="text-center">1</h1>
+                  </div>
+                  <div class="col-md-8 bg-primary">
+                    <div class="card-body">
+                      <h5 class="card-title text-light">Domingo</h5>
+                      <p class="card-text text-light">Actividades</p>
+                      <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!--col-->
+        </div><!--row interno-->
+       
+        <div class="row">
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+
+            <div class="col">
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4 my-auto">
+                    <h1 class="text-center">1</h1>
+                  </div>
+                  <div class="col-md-8 bg-primary">
+                    <div class="card-body">
+                      <h5 class="card-title text-light">Domingo</h5>
+                      <p class="card-text text-light">Actividades</p>
+                      <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!--col-->
+        </div><!--row interno-->
+       
+        <div class="row">
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+            
+          <div class="col">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4 my-auto">
+                  <h1 class="text-center">1</h1>
+                </div>
+                <div class="col-md-8 bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-title text-light">Domingo</h5>
+                    <p class="card-text text-light">Actividades</p>
+                    <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--col-->
+
+            <div class="col">
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4 my-auto">
+                    <h1 class="text-center">1</h1>
+                  </div>
+                  <div class="col-md-8 bg-primary">
+                    <div class="card-body">
+                      <h5 class="card-title text-light">Domingo</h5>
+                      <p class="card-text text-light">Actividades</p>
+                      <p class="card-text text-light"><small class="text-body-light">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!--col-->
+        </div><!--row interno-->
+    </div>
+    
+      
+  
 
       <h2>Section title</h2>
       <div class="table-responsive small">
@@ -451,9 +1051,10 @@
             </tr>
           </tbody>
         </table>
+
       </div>
     </main>
-  </div>
+  </div><!-- row -->
 </div>
 <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 
