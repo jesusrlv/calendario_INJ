@@ -47,4 +47,18 @@
   padding: .75rem 1rem;
 }
 
+/* mapa interactivo */
 
+.mapZac{
+  width: 72%;
+}
+
+.mapZac path {
+  fill:#850707d5;
+  stroke: #b4b3a8;
+  stroke-width: 9px;
+}
+.mapZac svg path:hover {
+  fill: #b2b420a8;
+  
+}
