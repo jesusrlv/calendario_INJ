@@ -15,8 +15,13 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="js/meses.js"></script>
@@ -100,14 +105,20 @@
       }
     </style>
 
-    
-    <!-- Custom styles for this template -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
-  </head>
-  <body onload="calendario()">
+
+
+<!-- Custom styles for this template -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="dashboard.css" rel="stylesheet">
+</head>
+<body onload="calendario();colaboradoresDashboard();queryUser_Tab()">
+
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="person" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+      </symbol>
       <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
       </symbol>
@@ -247,14 +258,14 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <svg class="bi"><use xlink:href="#file-earmark"/></svg>
-                Agregar actividad
+              <a class="nav-link d-flex align-items-center gap-2" href="#" data-bs-toggle="modal" data-bs-target="#agregarUser">
+                <i class="bi bi-person-plus-fill"></i>
+                Agregar usuario
               </a>
             </li>
       
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
+              <a class="nav-link d-flex align-items-center gap-2" href="#" onclick="queryUser()">
                 <svg class="bi"><use xlink:href="#people"/></svg>
                 Usuarios
               </a>
@@ -296,61 +307,8 @@
               <svg class="bi"><use xlink:href="#plus-circle"/></svg>
             </a>
           </h6>
-          <ul class="nav flex-column mb-auto">
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <span class="badge rounded-pill text-bg-primary"><svg class="bi"><use xlink:href="#file-earmark-text"/></svg></span>
-                <span class="badge rounded-pill text-bg-primary">Departamento 1</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <span class="badge rounded-pill text-bg-secondary"><svg class="bi"><use xlink:href="#file-earmark-text"/></svg></span>
-                <span class="badge rounded-pill text-bg-secondary">Departamento 2</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <span class="badge rounded-pill text-bg-success"><svg class="bi"><use xlink:href="#file-earmark-text"/></svg></span>
-                <span class="badge rounded-pill text-bg-success">Departamento 3</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <span class="badge rounded-pill text-bg-danger"><svg class="bi"><use xlink:href="#file-earmark-text"/></svg></span>
-                <span class="badge rounded-pill text-bg-danger">Departamento 4</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <span class="badge rounded-pill text-bg-warning"><svg class="bi"><use xlink:href="#file-earmark-text"/></svg></span>
-                <span class="badge rounded-pill text-bg-warning">Departamento 5</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <span class="badge rounded-pill text-bg-info"><svg class="bi"><use xlink:href="#file-earmark-text"/></svg></span>
-                <span class="badge rounded-pill text-bg-info">Departamento 6</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <span class="badge rounded-pill text-bg-primary"><svg class="bi"><use xlink:href="#file-earmark-text"/></svg></span>
-                <span class="badge rounded-pill text-bg-primary">Departamento 7</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <span class="badge rounded-pill text-bg-light"><svg class="bi"><use xlink:href="#file-earmark-text"/></svg></span>
-                <span class="badge rounded-pill text-bg-light">Departamento 8</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <span class="badge rounded-pill text-bg-dark"><svg class="bi"><use xlink:href="#file-earmark-text"/></svg></span>
-                <span class="badge rounded-pill text-bg-dark">Departamento 9</span>
-              </a>
-            </li>
+          <ul class="nav flex-column mb-auto" id="queryColaboradoresDashboard">
+            
             
           </ul>
 
@@ -417,7 +375,7 @@
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-event-fill"></i></span>
             <select class="form-select" aria-label="Default select example"  id="annio">
-              <option selected>Año</option>
+              <option value="">Año</option>
               <option value="2024">2024</option>
               <option value="2025">2025</option>
               <option value="2026">2026</option>
@@ -428,11 +386,8 @@
         <div class="col-4">
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><i class="bi bi-clipboard-check-fill"></i></span>
-            <select class="form-select" aria-label="Default select example" onchange="calendarioQuery()">
-              <option selected>Área</option>
-              <option value="1">Uno</option>
-              <option value="2">Dos</option>
-              <option value="3">Tres</option>
+            <select class="form-select" aria-label="Default select example" id="usuario" onchange="calendarioQuery()">
+            
             </select>
           </div>
         </div>
@@ -454,3 +409,99 @@
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script><script src="dashboard.js"></script></body> -->
 </html>
+
+
+<!-- Modal agregar usuario -->
+<div class="modal fade" id="agregarUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-person-plus-fill"></i>  Agregar colaborador</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
+          <input type="text" class="form-control" placeholder="Agregar colaborador" aria-label="Agregar colaborador" aria-describedby="basic-addon1" id="nombre">
+        </div>        
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
+          <input type="text" class="form-control" placeholder="Agregar usuario" aria-label="Agregar usuario" aria-describedby="basic-addon1" id="alias">
+        </div>        
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-passport"></i></span>
+          <input type="password" class="form-control" placeholder="Agregar contraseña" aria-label="Agregar contraseña" aria-describedby="basic-addon1" id="pass">
+        </div>        
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-passport"></i></span>
+          <input type="color" class="form-control" placeholder="Agregar color" aria-label="Agregar color" aria-describedby="basic-addon1" id="color">
+        </div>        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="agregarUsuarios()"><i class="bi bi-person-plus-fill"></i> Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal editar usuario -->
+<div class="modal fade" id="editarUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-person-plus-fill"></i>  Agregar colaborador</h1>
+        <button type="button" class="btn-close" data-bs-toggle="modal" data-bs-target="#queryColaboradores" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="idHidden" hidden>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
+          <input type="text" class="form-control" placeholder="Nombre completo" aria-label="Nombre completo" aria-describedby="basic-addon1" id="nombre1">
+        </div>       
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
+          <input type="text" class="form-control" placeholder="Nombre usuario" aria-label="Nombre usuario" aria-describedby="basic-addon1" id="user1">
+        </div>        
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-passport"></i></span>
+          <select class="form-select" aria-label="Default select example" placeholder="Perfil" id="perfil">
+            <option value="1">Administrador</option>
+            <option value="2">Usuario</option>
+          </select>
+        </div>        
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-passport"></i></span>
+          <select class="form-select" aria-label="Default select example" placeholder="Estatus" id="estatusUser">
+            <option value="1">Activo</option>
+            <option value="0">Inactivo</option>
+          </select>
+        </div>        
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-palette"></i></span>
+          <input type="color" class="form-control" placeholder="Color" aria-label="Color" aria-describedby="basic-addon1" id="colorEditar">
+        </div>        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#queryColaboradores">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="editarUsuarios()"><i class="bi bi-person-plus-fill"></i> Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal query usuario -->
+<div class="modal fade" id="queryColaboradores" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Listado de colaboradores</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <span id="queryUser"></span>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
