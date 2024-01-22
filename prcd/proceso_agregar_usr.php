@@ -11,6 +11,8 @@ include('../prcd/qc.php');
     $pass = $_POST['pass'];
     $pass = md5($pass);
     $color = $_POST['color'];
+    $area = $_POST['area'];
+    $departamento = $_POST['departamento'];
 
     $sqlInsert ="INSERT INTO users (
         nombre,
@@ -18,14 +20,18 @@ include('../prcd/qc.php');
         pwd,
         perfil,
         estatus,
-        color) 
+        color,
+        area,
+        departamento) 
         VALUES(
             '$nombre',
             '$alias',
             '$pass',
             2,
             1,
-            '$color'
+            '$color',
+            '$area',
+            '$departamento'
             )";
     $resultadosqlInsert = $conn->query($sqlInsert);
 

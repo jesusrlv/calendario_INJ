@@ -95,14 +95,67 @@ function colaboradoresDashboard() {
       });
 }
 
-function actualizarUsuario(id, nombre, usuario, estatus, perfil, color){
+function departamentosQueryAgregar(area) {
+
+  $.ajax(
+      {
+          type: "POST",
+          url: 'query/queryDepartamento.php',
+          data:{
+            area:area
+          },
+          dataType:'html',
+          success: function(data){
+            $('#DepartamentosAgregar').fadeIn(1000).html(data);
+          }
+      });
+}
+
+function areaQueryAgregar() {
+
+  $.ajax(
+      {
+          type: "POST",
+          url: 'query/queryArea.php',
+          dataType:'html',
+          success: function(data){
+            $('#AreaAgregar').fadeIn(1000).html(data);
+          }
+      });
+}
+
+function actualizarUsuario(id, nombre, usuario, estatus, perfil, color, area, departamento){
   $('#queryColaboradores').modal('hide'); 
+  $.ajax(
+    {
+        type: "POST",
+        url: 'query/queryArea.php',
+        dataType:'html',
+        success: function(data){
+          $('#areaEditar').fadeIn(1000).html(data);
+        }
+    });
+
+    $.ajax(
+        {
+            type: "POST",
+            url: 'query/queryDepartamento.php',
+            data:{
+              area:area
+            },
+            dataType:'html',
+            success: function(data){
+              $('#departamentoEditar').fadeIn(1000).html(data);
+            }
+        });
   document.getElementById('idHidden').value = id;
   document.getElementById('nombre1').value = nombre;
   document.getElementById('user1').value = usuario;
   document.getElementById('perfil').value = perfil;
   document.getElementById('estatusUser').value = estatus;
   document.getElementById('colorEditar').value = color;
+  document.getElementById('areaEditar').value = area;
+  document.getElementById('departamentoEditar').value = departamento;
   $('#editarUser').modal('show');
   
 }
@@ -114,8 +167,10 @@ function editarUsuarios(){
   var estatus = document.getElementById("estatusUser").value;
   var idHidden = document.getElementById("idHidden").value;
   var color = document.getElementById("colorEditar").value;
+  var area = document.getElementById("AreaAgregar").value;
+  var departamento = document.getElementById("DepartamentosAgregar").value;
 
-  if (nombre == "" || user == "" || perfil == "" || estatus == "" || color == "" || estatus == "") {
+  if (nombre == "" || user == "" || perfil == "" || estatus == "" || color == "" || area == "" || departamento == "") {
       alert("Llena los campos faltantes");
   } else {
 
@@ -128,6 +183,8 @@ function editarUsuarios(){
           user:user,
           perfil:perfil,
           estatus:estatus,
+          area:area,
+          departamento:departamento,
           color:color
       },
       dataType: "json",
@@ -163,6 +220,8 @@ function editarUsuarios(){
 function agregarUsuarios(){
   var nombre = document.getElementById("nombre").value;
   var alias = document.getElementById("alias").value;
+  var area = document.getElementById("AreaAgregar").value;
+  var departamento = document.getElementById("DepartamentosAgregar").value;
   var color = document.getElementById("color").value;
   var pass = document.getElementById("pass").value;
 
@@ -176,6 +235,8 @@ function agregarUsuarios(){
       data:{
           nombre:nombre,
           alias:alias,
+          area:area,
+          departamento:departamento,
           pass:pass,
           color:color
       },

@@ -40,7 +40,7 @@ include('../prcd/qc.php');
             echo '<td><span class="badge rounded-pill text-bg-danger">Inactivo</span></td>';
         }
         echo '<td>';
-            echo '<a class="btn btn-primary btn-sm me-1" href="javascript:void(0)" onclick="actualizarUsuario('.$row["id"].',\''.$row["nombre"].'\',\''.$row["user"].'\',\''.$row["estatus"].'\',\''.$row["perfil"].'\',\''.$row["color"].'\')"><i class="bi bi-pencil-square"></i></a>';
+            echo '<a class="btn btn-primary btn-sm me-1" href="javascript:void(0)" onclick="actualizarUsuario('.$row["id"].',\''.$row["nombre"].'\',\''.$row["user"].'\',\''.$row["estatus"].'\',\''.$row["perfil"].'\',\''.$row["color"].'\',\''.$row["area"].'\',\''.$row["departamento"].'\')"><i class="bi bi-pencil-square"></i></a>';
      
         echo '</td>';
         echo '</tr>';
