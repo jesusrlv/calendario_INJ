@@ -1,6 +1,7 @@
 function calendario() {
-var annio = 2023;
-var mes = 2;
+  var date = new Date();
+  var annio = date.getFullYear();
+  var mes = date.getMonth();
 
 var diasMes = new Date(annio, mes, 0).getDate();
 var diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
@@ -26,15 +27,12 @@ function calendarioQuery() {
 
     var mes = document.getElementById('mes').value;
     var annio = document.getElementById('annio').value;
-    var usuario = document.getElementById('usuario').value;
-
-    if(mes == "" || annio == "" || usuario == ""){
+/*     var usuario = document.getElementById('usuario').value;
+ */
+    if(mes == "" || annio == ""){
       alert("Debes seleccionar los campos vacíos");
     }
     else{
-
-    
-    
     document.getElementById("calendarioGrid").innerHTML = "";
     var diasMes = new Date(annio, mes, 0).getDate();
     var diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];

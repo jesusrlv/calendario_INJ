@@ -1,6 +1,8 @@
 function calendario() {
-var año = 2024;
-var mes = 1;
+var año = getFullYear();
+/* var año = 2024; */
+/* var mes = 1; */
+var mes = getMonth();
 
 var diasMes = new Date(año, mes, 0).getDate();
 var diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];

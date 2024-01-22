@@ -301,10 +301,10 @@
             </li>
             
           </ul>
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-dark text-uppercase">
             <span>Departamentos</span>
             <a class="link-secondary" href="#" aria-label="Add a new report">
-              <svg class="bi"><use xlink:href="#plus-circle"/></svg>
+              <!-- <svg class="bi"><use xlink:href="#plus-circle"/></svg> -->
             </a>
           </h6>
           <ul class="nav flex-column mb-auto" id="queryColaboradoresDashboard">
@@ -351,7 +351,7 @@
       <div class="row">
 
 
-        <div class="col-4">
+        <div class="col-6">
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-event-fill"></i></span>
             <select class="form-select" aria-label="Default select example" id="mes">
@@ -371,10 +371,10 @@
             </select>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-6">
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-event-fill"></i></span>
-            <select class="form-select" aria-label="Default select example"  id="annio">
+            <select class="form-select" aria-label="Default select example" id="annio" onchange="calendarioQuery()">
               <option value="">Año</option>
               <option value="2024">2024</option>
               <option value="2025">2025</option>
@@ -383,14 +383,14 @@
             </select>
           </div>
         </div>
-        <div class="col-4">
+        <!-- <div class="col-4">
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1"><i class="bi bi-clipboard-check-fill"></i></span>
             <select class="form-select" aria-label="Default select example" id="usuario" onchange="calendarioQuery()">
             
             </select>
           </div>
-        </div>
+        </div> -->
       </div>
       
       <div class="calendar">
