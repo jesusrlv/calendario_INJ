@@ -15,7 +15,7 @@
             echo '
             
                 <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
-                    <span>'.$rowDepto['area'].'</span>
+                    <span><i class="bi bi-clipboard-check-fill"></i> '.$rowDepto['area'].'</span>
                     <a class="link-secondary" aria-label="Colapsar listado" data-bs-toggle="collapse" href="#collapse'.$x.'" aria-expanded="false" aria-controls="collapseExample">
                         <svg class="bi"><use xlink:href="#plus-circle"/></svg>
                     </a>
