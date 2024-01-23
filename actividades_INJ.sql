@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-01-2024 a las 23:29:06
+-- Tiempo de generación: 24-01-2024 a las 00:11:32
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.28
 
@@ -20,6 +20,37 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `actividades_INJ`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `actividades`
+--
+
+CREATE TABLE `actividades` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `tipo` int(11) NOT NULL,
+  `descripcion` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `fecha` date NOT NULL,
+  `responsable` int(11) NOT NULL,
+  `tema` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `municipio` int(11) NOT NULL,
+  `comunidad` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `lugar` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `hora_salida` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `hora_evento` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `observaciones` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `estatus` int(11) NOT NULL,
+  `hora_registro` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `actividades`
+--
+
+INSERT INTO `actividades` (`id`, `nombre`, `tipo`, `descripcion`, `fecha`, `responsable`, `tema`, `municipio`, `comunidad`, `lugar`, `hora_salida`, `hora_evento`, `observaciones`, `estatus`, `hora_registro`) VALUES
+(1, 'Prueba', 1, 'd', '2023-12-21', 1, 'dd', 1, 'd', 'd', '1', '1', 'd', 1, '2024-01-23 17:10:49');
 
 -- --------------------------------------------------------
 
@@ -100,6 +131,12 @@ INSERT INTO `users` (`id`, `nombre`, `user`, `pwd`, `perfil`, `area`, `departame
 --
 
 --
+-- Indices de la tabla `actividades`
+--
+ALTER TABLE `actividades`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `area`
 --
 ALTER TABLE `area`
@@ -120,6 +157,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `actividades`
+--
+ALTER TABLE `actividades`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `area`
