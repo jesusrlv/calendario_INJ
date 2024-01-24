@@ -48,6 +48,21 @@ function guardarActividades(){
                     confirmButtonColor: "#0d6efd",
                     footer: 'INJUVENTUD'
                 });
+                $('#agregarActividad').modal('hide');
+
+                document.getElementById("nombreActividad").value = "";
+                document.getElementById("tipoActividad").value = "";
+                document.getElementById("fechaActividad").value = "";
+                document.getElementById("descripcionActividad").value = "";
+                document.getElementById("responsableActividad").value = "";
+                document.getElementById("temaActividad").value = "";
+                document.getElementById("municipioActividad").value = "";
+                document.getElementById("lugarActividad").value = "";
+                document.getElementById("comunidadActividad").value = "";
+                document.getElementById("horasalidaActividad").value = "";
+                document.getElementById("horaeventoActividad").value = "";
+                document.getElementById("observacionesActividad").value = "";
+                document.getElementById("estatusActividad").value = "";
   
             } else if (success == 0){
                 Swal.fire({

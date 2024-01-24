@@ -120,5 +120,38 @@ function areaQueryAgregar() {
       });
 }
 
+function tipoActividad(){
+  $.ajax(
+      {
+          type: "POST",
+          url: 'query/queryTipoActividad.php',
+          dataType:'html',
+          success: function(data){
+            $('#tipoActividad').fadeIn(1000).html(data);
+          }
+      });
+}
+function municipios(){
+  $.ajax(
+      {
+          type: "POST",
+          url: 'query/queryMunicipios.php',
+          dataType:'html',
+          success: function(data){
+            $('#municipioActividad').fadeIn(1000).html(data);
+          }
+      });
+}
+function responsable(){
+  $.ajax(
+      {
+          type: "POST",
+          url: 'query/queryResponsable.php',
+          dataType:'html',
+          success: function(data){
+            $('#responsableActividad').fadeIn(1000).html(data);
+          }
+      });
+}
 
 
