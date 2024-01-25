@@ -1,25 +1,74 @@
 function calendario() {
   var date = new Date();
   var annio = date.getFullYear();
-  var mes = date.getMonth();
+  var mes1 = date.getMonth();
+  var mes = mes1+1;
   var dia = date.getDate();
 
-var diasMes = new Date(annio, mes, 0).getDate();
-var diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre','Noviembre','Diciembre'];
-var indiceMes = new Date(annio, mes - 1, dia).getDay();
-console.log(indiceMes, mes);
+    document.getElementById("calendarioGrid").innerHTML = "";
+    var diasMes = new Date(annio, mes, 0).getDate();
+    var diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+    var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre','Noviembre','Diciembre'];
+    var indiceMes = new Date(annio, mes - 1, dia).getDay();
+    
+    var indiceMes = mes - 1;
 
-var indiceMes = mes - 1;
+    $.ajax(
+      {
+          type: "POST",
+          url: 'query/queryActividadesCalendario.php',
+          dataType:'html',
+          data:{
+            mes:mes,
+            annio:annio
+          },
+          success: function (data) {
+            var jsonData = JSON.parse(data);
+            console.log('Respuesta JSON:', jsonData);
+        
+            // Verificar si jsonData es un array antes de intentar acceder a su longitud
+            if (Array.isArray(jsonData)) {
+                console.log('Número de elementos en el array:', jsonData.length);
+        
+                // Iterar sobre cada elemento en el array
+                for (var i = 0; i < jsonData.length; i++) {
+                    var usuario = jsonData[i];
+                    var usr = usuario.responsable_id;
+                    var actividad = usuario.cantidad_actividades;
+                    var color = usuario.responsable_color;
+                    var dia = usuario.dia;
+                    var mes = usuario.mes;
+                    var annio = usuario.anno;
+        
+                    console.log('Usuario:', usr);
+                    console.log('Número de actividades:', actividad);
+                    console.log('Color:', color);
+        
+                    // Puedes hacer lo que necesites con cada usuario aquí
+                    // Por ejemplo, puedes agregar etiquetas HTML a algún elemento en tu página
+                    $('#datosNm' + dia).append('<span class="badge me-1 rounded-pill" style="background:'+color+'">'+actividad+'</span>');
+                }
+            } 
+        },
+        error: function (xhr, status, error) {
+            console.error('Error en la solicitud AJAX:', status, error);
+        }
 
-  for (var dia = 1; dia <= diasMes; dia++) {
-    // Ojo, hay que restarle 1 para obtener el mes correcto
-    var indice = new Date(annio, mes - 1, dia).getDay();
-    console.log(`El día número ${dia} del mes ${meses[indiceMes]} del annio ${annio} es ${diasSemana[indice]}`);
+      });
 
-      document.getElementById("calendarioGrid").innerHTML += '<div class="col-lg-2 col-md-4 col-sm-6"><div class="card mb-3" style="max-width: 540px;"><div class="row g-0"><div class="col-md-4 my-auto"><h1 class="text-center">'+dia+'</h1></div><div class="col-md-8 bg-primary"><div class="card-body"><h5 class="card-title text-light">'+diasSemana[indice]+'</h5><p class="card-text text-light">Actividades</p><p class="card-text text-light"><small class="text-body-light"><span class="badge me-1 rounded-pill text-bg-primary">9</span><span class="badge me-1 rounded-pill text-bg-secondary">9</span><span class="badge me-1 rounded-pill text-bg-success">9</span><span class="badge me-1 rounded-pill text-bg-danger">9</span><span class="badge me-1 rounded-pill text-bg-warning">9</span><span class="badge me-1 rounded-pill text-bg-info">9</span><span class="badge me-1 rounded-pill text-bg-light">9</span><span class="badge me-1 rounded-pill text-bg-dark">9</span></small></p></div></div></div></div></div><!--col-->';
-
-  }
+      timer();
+         
+    
+          for (var dia = 1; dia <= diasMes; dia++) {
+            // Ojo, hay que restarle 1 para obtener el mes correcto
+            var indice = new Date(annio, mes - 1, dia).getDay();
+            // console.log(`El día número ${dia} del mes ${meses[indiceMes]} del año ${annio} es ${diasSemana[indice]}`);
+            
+            // document.getElementById("datosNm").innerHTML += '<span class="badge me-1 rounded-pill text-bg-primary">9</span>';
+                
+              document.getElementById("calendarioGrid").innerHTML += '<div class="col-lg-2 col-md-4 col-sm-6"><div class="card mb-3" style="max-width: 540px;"><div class="row g-0"><div class="col-md-4 my-auto"><h1 class="text-center">'+dia+'</h1></div><div class="col-md-8 bg-primary"><div class="card-body"><h5 class="card-title text-light">'+diasSemana[indice]+'</h5><p class="card-text text-light">Actividades</p><p class="card-text text-light"><small class="text-body-light" id="datosNm'+dia+'"></small></p></div></div></div></div></div><!--col-->';
+          
+          }
 }
 
 function calendarioQuery() {
