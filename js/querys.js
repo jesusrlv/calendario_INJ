@@ -65,6 +65,8 @@ function calendarioQuery() {
                     var usr = usuario.usr;
                     var actividad = usuario.actividad;
                     var color = usuario.color;
+                    var mes = usuario.mes;
+                    var annio = usuario.annio;
     
                     console.log('Usuario:', usr);
                     console.log('Número de actividades:', actividad);
@@ -73,7 +75,7 @@ function calendarioQuery() {
                     // Puedes hacer lo que necesites con cada usuario aquí
                     // Por ejemplo, puedes agregar etiquetas HTML a algún elemento en tu página
                     
-                    $('#datosNm' + cont).append('<span class="badge me-1 rounded-pill" style="background:'+color+'">'+actividad+'</span>');
+                    $('#datosNm' + mes).append('<span class="badge me-1 rounded-pill" style="background:'+color+'">'+actividad+'</span>');
                 }
             } else {
                 console.error('La respuesta no es un array JSON válido.');
