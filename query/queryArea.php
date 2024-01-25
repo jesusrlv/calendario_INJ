@@ -5,7 +5,7 @@ include('../prcd/qc.php');
     $sql = "SELECT * FROM area";
     $resultadosql = $conn->query($sql);
     
-    echo '<option selected>Selecciona área ...</option>';
+    echo '<option value="">Selecciona área ...</option>';
     while($row = $resultadosql->fetch_assoc()){
         $x++; 
         echo '

@@ -2,7 +2,6 @@
 include('../prcd/qc.php');
 
     $area = $_POST['area'];
-    $x = 0;
     $sql = "SELECT * FROM departamento WHERE area = '$area'";
     $resultadosql = $conn->query($sql);
     

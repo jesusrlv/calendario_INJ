@@ -86,6 +86,8 @@ function calendarioQuery() {
         }
 
       });
+
+      timer();
          
     
           for (var dia = 1; dia <= diasMes; dia++) {
@@ -104,16 +106,16 @@ function calendarioQuery() {
   
   }
 
-  function queryUser(){
-    $.ajax({
-        type: "POST",
-        url: 'query/queryUser.php',
-        dataType:'html',
-        success: function(data){
-            $('#queryUser').fadeIn(1000).html(data);
-            $('#queryColaboradores').modal('show'); 
-        }
-    });
+function queryUser(){
+  $.ajax({
+      type: "POST",
+      url: 'query/queryUser.php',
+      dataType:'html',
+      success: function(data){
+          $('#queryUser').fadeIn(1000).html(data);
+          $('#queryColaboradores').modal('show'); 
+      }
+  });
 }
 
 function queryUser_Tab(){
@@ -128,7 +130,6 @@ function queryUser_Tab(){
 }
 
 function colaboradoresDashboard() {
-
   $.ajax(
       {
           type: "POST",
@@ -140,24 +141,29 @@ function colaboradoresDashboard() {
       });
 }
 
-function departamentosQueryAgregar(area) {
-
+function departamentosQueryAgregar(origen,area,departamento) {
+  var area1 = area;
   $.ajax(
       {
           type: "POST",
           url: 'query/queryDepartamento.php',
           data:{
-            area:area
+            area:area1
           },
           dataType:'html',
           success: function(data){
-            $('#DepartamentosAgregar').fadeIn(1000).html(data);
+            if(origen == 1){
+              $('#DepartamentosAgregar').fadeIn(1000).html(data);
+            }
+            else if(origen == 2){
+              $('#departamentoEditar').fadeIn(1000).html(data);
+              document.getElementById('departamentoEditar').value = departamento;
+            }
           }
       });
 }
 
 function areaQueryAgregar() {
-
   $.ajax(
       {
           type: "POST",

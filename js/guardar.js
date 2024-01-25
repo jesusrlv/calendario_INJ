@@ -133,37 +133,47 @@ function agregarUsuarios(){
 
 //   actualizar datos
 function actualizarUsuario(id, nombre, usuario, estatus, perfil, color, area, departamento){
+    var departamento1 = departamento;
+    var origen = 2;
     $('#queryColaboradores').modal('hide'); 
+    console.log('area: ' + area);
     $.ajax(
-      {
-          type: "POST",
-          url: 'query/queryArea.php',
-          dataType:'html',
-          success: function(data){
-            $('#areaEditar').fadeIn(1000).html(data);
-          }
-      });
-  
-      $.ajax(
-          {
-              type: "POST",
-              url: 'query/queryDepartamento.php',
-              data:{
-                area:area
-              },
-              dataType:'html',
-              success: function(data){
-                $('#departamentoEditar').fadeIn(1000).html(data);
-              }
-          });
+        {
+            type: "POST",
+            url: 'query/queryArea.php',
+            dataType:'html',
+            success: function(data){
+                $('#areaEditar').html(data);
+                document.getElementById('areaEditar').value = area;
+                departamentosQueryAgregar(origen,area,departamento1);
+                // document.getElementById('departamentoEditar').value = departamento1;
+                
+            }
+        });
+        
+    // $.ajax(
+    //     {
+    //         type: "POST",
+    //         url: 'query/queryDepartamento.php',
+    //         data:{
+    //             area:area
+    //         },
+    //         dataType:'html',
+    //         success: function(data){
+    //             $('#departamentoEditar').html(data);
+                
+    //     }
+    // });
+        
+    
     document.getElementById('idHidden').value = id;
     document.getElementById('nombre1').value = nombre;
     document.getElementById('user1').value = usuario;
-    document.getElementById('perfil').value = perfil;
+    document.getElementById('perfilEditar').value = perfil;
     document.getElementById('estatusUser').value = estatus;
     document.getElementById('colorEditar').value = color;
-    document.getElementById('areaEditar').value = area;
-    document.getElementById('departamentoEditar').value = departamento;
+    // document.getElementById('areaEditar').value = area;
+    // document.getElementById('departamentoEditar').value = departamento;
     $('#editarUser').modal('show');
     
   }
@@ -171,14 +181,14 @@ function actualizarUsuario(id, nombre, usuario, estatus, perfil, color, area, de
   function editarUsuarios(){
     var nombre = document.getElementById("nombre1").value;
     var user = document.getElementById("user1").value;
-    var perfil = document.getElementById("perfil").value;
+    var perfil = document.getElementById("perfilEditar").value;
     var estatus = document.getElementById("estatusUser").value;
     var idHidden = document.getElementById("idHidden").value;
     var color = document.getElementById("colorEditar").value;
-    var area = document.getElementById("AreaAgregar").value;
-    var departamento = document.getElementById("DepartamentosAgregar").value;
+    var area = document.getElementById("areaEditar").value;
+    var departamento = document.getElementById("departamentoEditar").value;
   
-    if (nombre == "" || user == "" || perfil == "" || estatus == "" || color == "" || area == "" || departamento == "") {
+    if (nombre == "") {
         alert("Llena los campos faltantes");
     } else {
   

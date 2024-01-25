@@ -13,7 +13,7 @@ include('../prcd/qc.php');
     $estatus = $_POST['estatus'];
     $color = $_POST['color'];
     $area = $_POST['area'];
-    $departemamto = $_POST['departemamto'];
+    $departamento = $_POST['departamento'];
 
     $sqlInsert ="UPDATE users SET 
         nombre = '$nombre',
