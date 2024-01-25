@@ -52,34 +52,30 @@ function calendarioQuery() {
           success: function (data) {
             var jsonData = JSON.parse(data);
             console.log('Respuesta JSON:', jsonData);
-    
-            // Asegúrate de que jsonData sea un array antes de intentar acceder a su longitud
-            if (Array.isArray(Object.keys(jsonData))) {
-              console.log(Object.keys(jsonData).length);
-/*                 console.log('Número de usuarios:', jsonData.length);
- */    
-                // Itera sobre cada usuario en el array
+        
+            // Verificar si jsonData es un array antes de intentar acceder a su longitud
+            if (Array.isArray(jsonData)) {
+                console.log('Número de elementos en el array:', jsonData.length);
+        
+                // Iterar sobre cada elemento en el array
                 for (var i = 0; i < jsonData.length; i++) {
-                    var cont = i + 1;
                     var usuario = jsonData[i];
-                    var usr = usuario.usr;
-                    var actividad = usuario.actividad;
-                    var color = usuario.color;
+                    var usr = usuario.responsable_id;
+                    var actividad = usuario.cantidad_actividades;
+                    var color = usuario.responsable_color;
+                    var dia = usuario.dia;
                     var mes = usuario.mes;
-                    var annio = usuario.annio;
-    
+                    var annio = usuario.anno;
+        
                     console.log('Usuario:', usr);
                     console.log('Número de actividades:', actividad);
                     console.log('Color:', color);
-    
+        
                     // Puedes hacer lo que necesites con cada usuario aquí
                     // Por ejemplo, puedes agregar etiquetas HTML a algún elemento en tu página
-                    
-                    $('#datosNm' + mes).append('<span class="badge me-1 rounded-pill" style="background:'+color+'">'+actividad+'</span>');
+                    $('#datosNm' + dia).append('<span class="badge me-1 rounded-pill" style="background:'+color+'">'+actividad+'</span>');
                 }
-            } else {
-                console.error('La respuesta no es un array JSON válido.');
-            }
+            } 
         },
         error: function (xhr, status, error) {
             console.error('Error en la solicitud AJAX:', status, error);
