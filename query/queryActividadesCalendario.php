@@ -22,6 +22,6 @@ while ($row = $resultado->fetch_assoc()){
         'color' => $color
     );
 }
-echo json_decode($usuarios);
+echo json_encode($usuarios);
 
 ?>

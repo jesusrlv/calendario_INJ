@@ -49,23 +49,31 @@ function calendarioQuery() {
           dataType:'html',
           
           success: function (data) {
-            var jsonData = JSON.parse(JSON.stringify(data));
-            
-            console.log('Respuesta JSON:'+ jsonData +' '+jsonData.length);
+            var jsonData = JSON.parse(data)
+            console.log('Respuesta JSON:', jsonData);
     
-            for (var i = 0; i < jsonData.length; i++) {
-                var usuario = jsonData[i];
-                var usr = usuario.usr;
-                var actividad = usuario.actividad;
-                var color = usuario.color;
+            // Asegúrate de que jsonData sea un array antes de intentar acceder a su longitud
+            if (Array.isArray(Object.keys(jsonData))) {
+              console.log(Object.keys(jsonData).length);
+/*                 console.log('Número de usuarios:', jsonData.length);
+ */    
+                // Itera sobre cada usuario en el array
+                for (var i = 0; i < jsonData.length; i++) {
+                    var usuario = jsonData[i];
+                    var usr = usuario.usr;
+                    var actividad = usuario.actividad;
+                    var color = usuario.color;
     
-                console.log('Usuario:', usr);
-                console.log('Número de actividades:', actividad);
-                console.log('Color:', color);
+                    console.log('Usuario:', usr);
+                    console.log('Número de actividades:', actividad);
+                    console.log('Color:', color);
     
-                // Puedes hacer lo que necesites con cada usuario aquí
-                // Por ejemplo, puedes agregar etiquetas HTML a algún elemento en tu página
-                $('#datosNm' + i).append('<label>Usuario: ' + usr + ', Actividades: ' + actividad + ', Color: ' + color + '</label>');
+                    // Puedes hacer lo que necesites con cada usuario aquí
+                    // Por ejemplo, puedes agregar etiquetas HTML a algún elemento en tu página
+                    $('#datosNm' + i).append('<label>Usuario: ' + usr + ', Actividades: ' + actividad + ', Color: ' + color + '</label>');
+                }
+            } else {
+                console.error('La respuesta no es un array JSON válido.');
             }
         },
         error: function (xhr, status, error) {
