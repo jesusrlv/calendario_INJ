@@ -104,6 +104,15 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+      
+        #cardH a:hover {
+    
+          box-shadow: 0 10px 20px rgba(0,0,0,.1), 0 4px 8px rgba(0,0,0,.06);
+          transform: scale(1.03);
+          transition: width 0.8s, height 0.8s, transform 0.3s;
+          
+        }
+      
     </style>
 
 
@@ -420,7 +429,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-clipboard-plus-fill"></i> Agregar actividad</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-clipboard-plus-fill"></i> Agregar actividad (<span id="fechaId"></span>)</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
