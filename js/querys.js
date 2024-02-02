@@ -142,7 +142,7 @@ function calendarioQuery() {
             
             // document.getElementById("datosNm").innerHTML += '<span class="badge me-1 rounded-pill text-bg-primary">9</span>';
                 
-              document.getElementById("calendarioGrid").innerHTML += '<div class="col-lg-2 col-md-4 col-sm-6"><div class="card mb-3" style="max-width: 540px;"><div class="row g-0"><div class="col-md-4 my-auto"><h1 class="text-center">'+dia+'</h1></div><div class="col-md-8 bg-primary"><div class="card-body"><h5 class="card-title text-light">'+diasSemana[indice]+'</h5><p class="card-text text-light">Actividades</p><p class="card-text text-light"><small class="text-body-light" id="datosNm'+dia+'"></small></p></div></div></div></div></div><!--col-->';
+            document.getElementById("calendarioGrid").innerHTML += '<div class="col-lg-2 col-md-4 col-sm-6" id="cardH"><a href="#" onclick="modalAgregar('+dia+','+mes+','+annio+')" style="text-decoration:none"><div class="card mb-3" style="max-width: 540px;"><div class="row g-0"><div class="col-md-4 my-auto"><h1 class="text-center">'+dia+'</h1></div><div class="col-md-8 bg-primary"><div class="card-body"><h5 class="card-title text-light">'+diasSemana[indice]+'</h5><p class="card-text text-light">Actividades</p><p class="card-text text-light"><small class="text-body-light" id="datosNm'+dia+'"></small></p></div></div></div></div></a></div><!--col-->';
           
           }
       //   }
@@ -159,6 +159,11 @@ function modalAgregar(dia,mes,annio){
   document.getElementById("fechaId").innerHTML = fechaISO;
   document.getElementById("fechaActividad").disabled = true;
   console.log(fechaISO);
+}
+
+function revisarCalendario() {
+  $('#agregarActividad').modal('hide');
+  $('#modalCalendario').modal('show');
 }
 
 function queryUser(){
