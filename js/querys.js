@@ -281,7 +281,7 @@ function municipios(){
           }
       });
 }
-function responsable(){
+function responsable(id){
   $.ajax(
       {
           type: "POST",
@@ -289,6 +289,7 @@ function responsable(){
           dataType:'html',
           success: function(data){
             $('#responsableActividad').fadeIn(1000).html(data);
+            document.getElementById('responsableActividad').value = id;
           }
       });
 }

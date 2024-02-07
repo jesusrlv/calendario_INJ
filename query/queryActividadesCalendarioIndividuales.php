@@ -8,14 +8,23 @@
     $fecha = $_POST['fecha'];
 
 
-    $sqlSelect = "SELECT * FROM actividades WHERE fecha = '$fecha'
-    ORDER BY hora_evento DESC";
+    $sqlSelect = "SELECT * FROM actividades WHERE fecha = '$fecha' ORDER BY hora_evento ASC";
     $resultadoAct = $conn->query($sqlSelect);
     while($row=$resultadoAct->fetch_assoc()){
         $usr = $row['responsable'];
         $queryUsr = "SELECT * FROM users WHERE id = '$usr'";
         $resultadoUsr = $conn->query($queryUsr);
         $rowUsr = $resultadoUsr->fetch_assoc();
+
+        $Hora = $row['hora_evento'];
+        $queryHora = "SELECT * FROM hora WHERE id = '$Hora'";
+        $resultadoHora = $conn->query($queryHora);
+        $rowHora = $resultadoHora->fetch_assoc();
+        
+        $horaSalida = $row['hora_salida'];
+        $queryhoraSalida = "SELECT * FROM hora WHERE id = '$horaSalida'";
+        $resultadohoraSalida = $conn->query($queryhoraSalida);
+        $rowhoraSalida = $resultadohoraSalida->fetch_assoc();
 
         $tipoEvento = $row['tipo'];
         $queryEvento = "SELECT * FROM catalogo_actividad WHERE id = '$tipoEvento'";
@@ -38,21 +47,19 @@
             $estatusText = '<i class="bi bi-x-circle-fill text-danger"></i> No terminado';
         }
 
-
-
-
         echo'
         <dl>
-            <dt><p><span class="badge" style="background-color:'.$rowUsr['color'].'">'.$row['hora_evento'].'</span></p></dt>
+            <dd><hr></dd>
+            <dt><p><span class="badge" style="background-color:'.$rowUsr['color'].'">'.$rowHora['hora'].'</span></p></dt>
             
             <dd>
                 <p><strong>'.$row['nombre'].'</strong></p> 
                 <strong>Tipo de evento:</strong> '.$rowEvento['actividad'].'<br>
                 <strong>Tema:</strong> '.$row['tema'].'<br>
                 <strong>Municipio:</strong> '.$rowMpio['nombreMunicipio'].'<br>
-                <strong>Hora de salida:</strong> '.$row['hora_salida'].'<br> '.$row['observaciones'].'<br> '.$estatusText.'
+                <strong>Hora de salida:</strong> '.$rowhoraSalida['hora'].'<br> '.$row['observaciones'].'<br> '.$estatusText.'
             </dd>
-            <dd><hr></dd>
+            
             
         </dl>';
     }    
