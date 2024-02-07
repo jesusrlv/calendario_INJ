@@ -158,7 +158,7 @@ function modalAgregar(dia,mes,annio,fecha){
   document.getElementById("fechaActividad").value = fechaISO;
   document.getElementById("fechaId").innerHTML = fechaISO;
   document.getElementById("fechaActividad").disabled = true;
-  document.getElementById("revisarCalendario").setAttribute("onclick","revisarCalendario("+dia+", "+mes+", "+annio+", "+fechaISO+")");
+  document.getElementById("revisarCalendario").setAttribute("onclick","revisarCalendario("+dia+", "+mes+", "+annio+", '"+fechaISO+"')");
   console.log(fechaISO);
 }
 
