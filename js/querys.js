@@ -66,7 +66,7 @@ function calendario() {
             
             // document.getElementById("datosNm").innerHTML += '<span class="badge me-1 rounded-pill text-bg-primary">9</span>';
                 
-              document.getElementById("calendarioGrid").innerHTML += '<div class="col-lg-2 col-md-4 col-sm-6" id="cardH"><a href="#" onclick="modalAgregar('+dia+','+mes+','+annio+')" style="text-decoration:none"><div class="card mb-3" style="max-width: 540px;"><div class="row g-0"><div class="col-md-4 my-auto"><h1 class="text-center">'+dia+'</h1></div><div class="col-md-8 bg-primary"><div class="card-body"><h5 class="card-title text-light">'+diasSemana[indice]+'</h5><p class="card-text text-light">Actividades</p><p class="card-text text-light"><small class="text-body-light" id="datosNm'+dia+'"></small></p></div></div></div></div></a></div><!--col-->';
+            document.getElementById("calendarioGrid").innerHTML += '<div class="col-lg-2 col-md-4 col-sm-6" id="cardH"><a href="#" onclick="modalAgregar('+dia+','+mes+','+annio+')" style="text-decoration:none"><div class="card mb-3" style="max-width: 540px;"><div class="row g-0"><div class="col-md-4 my-auto"><h1 class="text-center">'+dia+'</h1></div><div class="col-md-8 bg-primary"><div class="card-body"><h5 class="card-title text-light">'+diasSemana[indice]+'</h5><p class="card-text text-light">Actividades</p><p class="card-text text-light"><small class="text-body-light" id="datosNm'+dia+'"></small></p></div></div></div></div></a></div><!--col-->';
           
           }
 }
@@ -151,19 +151,43 @@ function calendarioQuery() {
   
   }
 
-function modalAgregar(dia,mes,annio){
+function modalAgregar(dia,mes,annio,fecha){
   $('#agregarActividad').modal('show');
   var fecha = new Date(annio, mes-1, dia);
   var fechaISO = fecha.getFullYear() + '-' + ('0' + (fecha.getMonth() + 1)).slice(-2) + '-' + ('0' + fecha.getDate()).slice(-2);  
   document.getElementById("fechaActividad").value = fechaISO;
   document.getElementById("fechaId").innerHTML = fechaISO;
   document.getElementById("fechaActividad").disabled = true;
+  document.getElementById("revisarCalendario").setAttribute("onclick","revisarCalendario("+dia+", "+mes+", "+annio+", "+fechaISO+")");
   console.log(fechaISO);
 }
 
-function revisarCalendario() {
+function revisarCalendario(dia,mes,annio,fechaISO) {
   $('#agregarActividad').modal('hide');
   $('#modalCalendario').modal('show');
+
+  $.ajax(
+    {
+        type: "POST",
+        url: 'query/queryActividadesCalendarioIndividuales.php',
+        dataType:'html',
+        data:{
+          dia:dia,
+          mes:mes,
+          annio:annio,
+          fecha:fechaISO
+        },
+        success: function (data) {
+          $('#contenedorFecha').fadeIn(1000).html(data);
+          
+      },
+      error: function (xhr, status, error) {
+          console.error('Error en la solicitud AJAX:', status, error);
+      }
+
+    });
+
+
 }
 
 function queryUser(){
