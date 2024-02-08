@@ -15,7 +15,7 @@ function login(){
               var jsonData = JSON.parse(JSON.stringify(data));
               var success = jsonData.success;
 
-              if(success = 1){
+              if(success == 1){
                 Swal.fire({
                   icon:'success',
                   title: 'Login correcto',
@@ -27,7 +27,7 @@ function login(){
                   }
                 });
               }
-              else if(success = 0){
+              else if(success == 0){
                 Swal.fire({
                   icon: 'error',
                   title: 'Usuario o contraseña incorrectos',

@@ -430,8 +430,6 @@
 </div>
 <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script><script src="dashboard.js"></script></body> -->
-
     <!-- Modal agregar actividad -->
 <div class="modal fade" id="agregarActividad" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -627,6 +625,45 @@
 
 <!-- modal abrir calendario -->
 <div class="modal fade" id="modalCalendario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Actividades agendadas</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+            
+            
+              <div class="col-12" id=""><div class="card mb-3" style="max-width: 100%;"><div class="row g-0"><div class="col-md-4 my-auto"><h1 class="text-center">9</h1></div><div class="col-md-8 bg-primary"><div class="card-body"><h5 class="card-title text-light">Jueves</h5><p class="card-text text-light">Listado de actividades</p><p class="card-text text-light"><small class="text-body-light" id="datosNm'+dia+'"></small></p></div></div></div></div></div>
+              <p class="h3">
+                Orden del día
+              </p>
+              <div class="container" id="contenedorFecha">
+                <!-- <dl>
+                  <dt>06:00</dt>
+                  <dd><hr></dd>
+                  <dd>- (Color) (Actividad) Evento 1</dd>
+                  <dt>06:30</dt>
+                  <dd><hr></dd>
+                  <dd>- white cold drink</dd>
+                </dl> -->
+               
+              </div>
+              
+          </div>
+              <!-- <div class="col-0"></div> -->
+        </div>
+       
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal abrir individual -->
+<div class="modal fade" id="modalIndividual2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">

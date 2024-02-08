@@ -189,6 +189,33 @@ function revisarCalendario(dia,mes,annio,fechaISO) {
 
 
 }
+// function revisarCalendarioPorPersona(dia,mes,annio,fechaISO) {
+function revisarCalendarioPorPersona() {
+  $('#modalIndividual2').modal('show');
+
+  // $.ajax(
+  //   {
+  //       type: "POST",
+  //       url: 'query/queryActividadesCalendarioIndividuales.php',
+  //       dataType:'html',
+  //       data:{
+  //         dia:dia,
+  //         mes:mes,
+  //         annio:annio,
+  //         fecha:fechaISO
+  //       },
+  //       success: function (data) {
+  //         $('#contenedorFecha').fadeIn(1000).html(data);
+          
+  //     },
+  //     error: function (xhr, status, error) {
+  //         console.error('Error en la solicitud AJAX:', status, error);
+  //     }
+
+  //   });
+
+
+}
 
 function queryUser(){
   $.ajax({
