@@ -1,10 +1,28 @@
 <?php
-    session_start();
+session_start();
+
+// Verificar si el usuario está autenticado
+if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] == 2 && $_SESSION['calendario'] == 1) {
+    // El usuario está autenticado, puedes continuar con el contenido de la página
     $usr = $_SESSION['id'];
-    /* $usr = 1; */
     $perfil = $_SESSION['perfil'];
 
+    $calendario = $_SESSION['calendario'];
+    $oic = $_SESSION['oic'];
+    $rCuentas = $_SESSION['rCuentas'];
+    $rescateEsp = $_SESSION['rescateEsp'];
+    $tickets = $_SESSION['tickets'];
+    $web = $_SESSION['web'];
+
+    // Aquí puedes colocar el contenido de tu página para usuarios autenticados
+
+} else {
+    // El usuario no está autenticado, redirigir a la página de inicio de sesión
+    header("Location: prcd/sort.php");
+    exit(); // Asegura que se detenga la ejecución del script después de la redirección
+}
 ?>
+
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="assets/js/color-modes.js"></script>
@@ -342,7 +360,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
+              <a class="nav-link d-flex align-items-center gap-2" href="prcd/sort.php">
                 <svg class="bi"><use xlink:href="#door-closed"/></svg>
                 Salir
               </a>
