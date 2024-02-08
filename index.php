@@ -1,8 +1,8 @@
 <?php
     session_start();
-    // $usr = $_SESSION['user'];
-    $usr = 1;
-    // $perfil = $_SESSION['perfil'];
+    $usr = $_SESSION['id'];
+    /* $usr = 1; */
+    $perfil = $_SESSION['perfil'];
 
 ?>
 <!doctype html>

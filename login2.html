@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('background.jpg'); /* Reemplaza 'background.jpg' con la ruta de tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.login-form button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.company-info {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  margin-left: 20px;
+  flex-grow: 1;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+}
+
+.company-info h2 {
+  margin-bottom: 20px;
+}
+
+.program-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 5px;
+  margin: 10px;
+  flex: 1 0 300px;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+</style>
+<body>
+  <div class="login-container">
+    <div class="login-form">
+      <h2>Iniciar sesión</h2>
+      <form action="#" method="POST">
+        <input type="text" name="username" placeholder="Usuario" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <button type="submit">Iniciar sesión</button>
+      </form>
+    </div>
+    <div class="company-info">
+      <h2>Información de la Empresa</h2>
+      <div class="program-cards">
+        <div class="card">
+          <h3>Programa 1</h3>
+          <p>Descripción del programa 1.</p>
+        </div>
+        <div class="card">
+          <h3>Programa 2</h3>
+          <p>Descripción del programa 2.</p>
+        </div>
+        <div class="card">
+          <h3>Programa 3</h3>
+          <p>Descripción del programa 3.</p>
+        </div>
+        <div class="card">
+          <h3>Programa 4</h3>
+          <p>Descripción del programa 4.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
