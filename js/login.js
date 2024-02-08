@@ -23,7 +23,7 @@ function login(){
                   timer: 1500
                 }).then((result) => {
                   if (result.dismiss === Swal.DismissReason.timer) {
-                    window.location.href = "index.php";
+                    window.location.href = "calendario.php";
                   }
                 });
               }

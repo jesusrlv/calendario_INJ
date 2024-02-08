@@ -16,6 +16,12 @@ if($fila == 1){
     $_SESSION['user'] = $row['user'];
     $_SESSION['nombre'] = $row['nombre'];
     $_SESSION['perfil'] = $row['perfil'];
+    $_SESSION['calendario'] = $row['calendario'];
+    $_SESSION['oic'] = $row['oic'];
+    $_SESSION['rCuentas'] = $row['rCuentas'];
+    $_SESSION['tickets'] = $row['tickets'];
+    $_SESSION['web'] = $row['web'];
+    $_SESSION['rescateEsp'] = $row['rescateEsp'];
     echo json_encode(array(
         'success'=>1
     ));

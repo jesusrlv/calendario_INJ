@@ -346,3 +346,49 @@ function timer(){
         }
       });
 }
+
+function bloqueos(){
+  var calendario = document.getElementById("calendario2").value;
+  var oic = document.getElementById("oic2").value;
+  var rCuentas = document.getElementById("rCuentas2").value;
+  var rescEspacios = document.getElementById("rescEspacios2").value;
+  var tickets = document.getElementById("tickets2").value;
+  var web = document.getElementById("web2").value;
+
+  if(calendario == 0){
+    document.getElementById("calendario").setAttribute('class','nav-link d-flex align-items-center gap-2 disabled');
+  }
+  else{
+    document.getElementById("calendario").disabled = false;
+  }
+  if(oic == 0){
+    document.getElementById("oic").setAttribute('class','nav-link d-flex align-items-center gap-2 disabled');
+  }
+  else{
+    document.getElementById("oic").disabled = false;
+  }
+  if(rCuentas == 0){
+    document.getElementById("rCuentas").setAttribute('class','nav-link d-flex align-items-center gap-2 disabled');
+  }
+  else{
+    document.getElementById("rCuentas").disabled = false;
+  }
+  if(rescEspacios == 0){
+    document.getElementById("rescEspacios").setAttribute('class','nav-link d-flex align-items-center gap-2 disabled');
+  }
+  else{
+    document.getElementById("rescEspacios").disabled = false;
+  }
+  if(tickets == 0){
+    document.getElementById("tickets").setAttribute('class','nav-link d-flex align-items-center gap-2 disabled');
+  }
+  else{
+    document.getElementById("tickets").disabled = false;
+  }
+  if(web == 0){
+    document.getElementById("web").setAttribute('class','nav-link d-flex align-items-center gap-2 disabled');
+  }
+  else{
+    document.getElementById("web").disabled = false;
+  }
+}

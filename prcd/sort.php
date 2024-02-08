@@ -19,7 +19,7 @@ echo '
 
 session_destroy();
 $_SESSION = "";
-header('Location: ../login.html');
+header('Location: ../index.html');
 
 
 

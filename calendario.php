@@ -148,7 +148,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
 <!-- Custom styles for this template -->
 <link href="dashboard.css" rel="stylesheet">
 </head>
-<body onload="calendario();colaboradoresDashboard();queryUser_Tab(); areaQueryAgregar();tipoActividad();municipios();responsable(<?php echo $usr ?>)">
+<body onload="calendario();colaboradoresDashboard();queryUser_Tab(); areaQueryAgregar();tipoActividad();municipios();responsable(<?php echo $usr ?>);bloqueos();">
 
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="person" viewBox="0 0 16 16">
@@ -295,13 +295,50 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
             </li>
 
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="#">
-                <svg class="bi"><use xlink:href="#graph-up"/></svg>
-                Reportes
+              <a class="nav-link d-flex align-items-center gap-2" href="#" id="calendario">
+                <i class="bi bi-calendar-check-fill"></i>
+                Calendario
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#" id="oic">
+                <i class="bi bi-motherboard"></i>
+                Órgano interno de control
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#" id="rCuentas">
+                <i class="bi bi-calculator"></i>
+                Rendición de cuentas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#" id="rescEspacios">
+                <i class="bi bi-pin-map"></i>
+                Rescate de espacios públicos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#" id="tickets">
+                <i class="bi bi-apple"></i>
+                Tickets de servicio informático
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2" href="#" id="web">
+                <i class="bi bi-file-earmark-break"></i>
+                Web landing
               </a>
             </li>
 
           </ul>
+          <input type="text" id="calendario2" value="<?php echo $calendario ?>" hidden>
+          <input type="text" id="oic2" value="<?php echo $oic ?>" hidden>
+          <input type="text" id="rCuentas2" value="<?php echo $rCuentas ?>" hidden>
+          <input type="text" id="rescEspacios2" value="<?php echo $rescateEsp ?>" hidden>
+          <input type="text" id="tickets2" value="<?php echo $tickets ?>" hidden>
+          <input type="text" id="web2" value="<?php echo $web ?>" hidden>
+
 
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
             <span><i class="bi bi-people-fill"></i> Usuarios</span>
@@ -847,3 +884,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
   </div>
 </div>
 
+<script>
+  
+</script>
