@@ -340,6 +340,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
           <input type="text" id="rescEspacios2" value="<?php echo $rescateEsp ?>" hidden>
           <input type="text" id="tickets2" value="<?php echo $tickets ?>" hidden>
           <input type="text" id="web2" value="<?php echo $web ?>" hidden>
+          <input type="text" id="perfilUsr" value="<?php echo $perfil ?>" hidden>
 
 
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">

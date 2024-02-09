@@ -354,6 +354,7 @@ function bloqueos(){
   var rescEspacios = document.getElementById("rescEspacios2").value;
   var tickets = document.getElementById("tickets2").value;
   var web = document.getElementById("web2").value;
+  var perfil = document.getElementById("perfilUsr").value;
 
   if(calendario == 0){
     document.getElementById("calendario").setAttribute('class','nav-link d-flex align-items-center gap-2 disabled');
@@ -391,4 +392,6 @@ function bloqueos(){
   else{
     document.getElementById("web").disabled = false;
   }
+
+  
 }
