@@ -13,6 +13,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
     $rescateEsp = $_SESSION['rescateEsp'];
     $tickets = $_SESSION['tickets'];
     $web = $_SESSION['web'];
+    $color = $_SESSION['color'];
 
     // Aquí puedes colocar el contenido de tu página para usuarios autenticados
 
@@ -256,7 +257,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
   </symbol>
 </svg>
 
-<header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+<!-- <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark"> -->
+<header class="navbar sticky-top flex-md-nowrap p-0 shadow" data-bs-theme="dark" style="background-color:<?php echo $color ?>">
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">INJUVENTUD</a>
 
   <ul class="navbar-nav flex-row d-md-none">

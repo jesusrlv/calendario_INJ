@@ -22,6 +22,7 @@ if($fila == 1){
     $_SESSION['tickets'] = $row['tickets'];
     $_SESSION['web'] = $row['web'];
     $_SESSION['rescateEsp'] = $row['rescateEsp'];
+    $_SESSION['color'] = $row['color'];
     echo json_encode(array(
         'success'=>1
     ));
