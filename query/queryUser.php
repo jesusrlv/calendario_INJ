@@ -41,6 +41,8 @@ include('../prcd/qc.php');
         }
         echo '<td>';
             echo '<a class="btn btn-primary btn-sm me-1" href="javascript:void(0)" onclick="actualizarUsuario('.$row["id"].',\''.$row["nombre"].'\',\''.$row["user"].'\',\''.$row["estatus"].'\',\''.$row["perfil"].'\',\''.$row["color"].'\',\''.$row["area"].'\',\''.$row["departamento"].'\')"><i class="bi bi-pencil-square"></i></a>';
+        echo ' ';
+        echo '<a class="btn btn-warning btn-sm me-1" href="javascript:void(0)" onclick="cambiarContrasena('.$row["id"].')"><i class="bi bi-passport"></i></a>';
      
         echo '</td>';
         echo '</tr>';

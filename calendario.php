@@ -756,6 +756,30 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
   </div>
 </div>
 
+<!-- Modal editar contraseña -->
+<div class="modal fade" id="editarPwd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-person-lock"></i> Editar contraseña</h1>
+        <button type="button" class="btn-close" data-bs-toggle="modal" data-bs-target="#queryColaboradores" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="idHidepwd" hidden>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-lock"></i></span>
+          <input type="password" class="form-control" placeholder="Nueva contraseña" aria-label="Nueva contraseña" aria-describedby="basic-addon1" id="pwdNew">
+        </div>       
+      </div>       
+        
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#queryColaboradores">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick="editarPWD()"><i class="bi bi-person-lock"></i> Editar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 </html>
 
@@ -811,7 +835,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-person-plus-fill"></i>  Agregar colaborador</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-person-plus-fill"></i>  Editar usuario</h1>
         <button type="button" class="btn-close" data-bs-toggle="modal" data-bs-target="#queryColaboradores" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -867,6 +891,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
     </div>
   </div>
 </div>
+
 <!-- Modal query usuario -->
 <div class="modal fade" id="queryColaboradores" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -883,7 +908,3 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
     </div>
   </div>
 </div>
-
-<script>
-  
-</script>

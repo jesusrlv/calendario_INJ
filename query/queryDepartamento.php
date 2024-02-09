@@ -7,7 +7,7 @@ include('../prcd/qc.php');
     
     echo '<option value="">Selecciona departamento ...</option>';
     while($row = $resultadosql->fetch_assoc()){
-        $x++; 
+        
         echo '
             <option value="'.$row['id'].'">'.$row['departamento'].'</option>
         ';

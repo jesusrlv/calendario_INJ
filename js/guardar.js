@@ -234,3 +234,51 @@ function actualizarUsuario(id, nombre, usuario, estatus, perfil, color, area, de
         });
     }
   }
+  function cambiarContrasena(id){
+    $('#queryColaboradores').modal('hide'); 
+    $('#editarPwd').modal('show'); 
+
+    document.getElementById('idHidepwd').value = id;
+
+  }
+
+  function editarPWD(){
+    id = document.getElementById('idHidepwd').value;
+    pwd = document.getElementById('pwdNew').value;
+    $.ajax({
+        type:"POST",
+        url:"prcd/proceso_editar_pwd.php",
+        data:{
+            id:id,
+            pwd:pwd
+        },
+        dataType: "json",
+        success: function(data){
+            var jsonData = JSON.parse(JSON.stringify(data));
+            var success = jsonData.success;
+            
+            if (success == 1) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Contraseña editada',
+                    text: 'Proceso exitoso',
+                    confirmButtonColor: "#0d6efd",
+                    footer: 'INJUVENTUD'
+                });
+                $('#editarUser').modal('hide'); 
+                queryUser();
+                colaboradoresDashboard()
+                $('#queryColaboradores').modal('show'); 
+            } else if (success == 0){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Contraseña no editada',
+                    text: 'Proceso no exitoso',
+                    footer: 'INJUVENTUD'
+                });
+            }
+        }
+        });
+
+
+  }
