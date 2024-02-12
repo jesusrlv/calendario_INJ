@@ -395,3 +395,20 @@ function bloqueos(){
 
   
 }
+
+function contedoTerminados(){
+  $.ajax(
+    {
+        type: "POST",
+        url: 'query/queryConteos.php',
+        dataType:'json',
+        success: function(data){
+          var jsonData = JSON.parse(data);
+          var conteoTerminado = jsonData.terminados;
+          var conteoNoTerminado = jsonData.noTerminados;
+
+          document.getElementById('flagTerminados').value = contedoTerminado;
+          document.getElementById('flagNoTerminados').value = contedoNoTerminado;
+        }
+    });
+}
