@@ -417,14 +417,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
           <div class="btn-group me-2">
             <button type="button" class="btn btn-sm btn-outline-primary">Terminados
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary" style="z-index: 100;">
-                99+
+                <span id="flagTerminados"></span>
                 <span class="visually-hidden">unread messages</span>
               </span>
             
             </button>
             <button type="button" class="btn btn-sm btn-outline-danger">Pendientes
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="z-index: 100;">
-                99+
+                <span id="flagNoTerminados"></span>
                 <span class="visually-hidden">unread messages</span>
               </span>
             </button>

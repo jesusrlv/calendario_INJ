@@ -404,8 +404,8 @@ function contedoTerminados(){
         dataType:'json',
         success: function(data){
           var jsonData = JSON.parse(data);
-          var conteoTerminado = jsonData.terminados;
-          var conteoNoTerminado = jsonData.noTerminados;
+          var conteoTerminado = jsonData.terminado;
+          var conteoNoTerminado = jsonData.noTerminado;
 
           document.getElementById('flagTerminados').value = contedoTerminado;
           document.getElementById('flagNoTerminados').value = contedoNoTerminado;
