@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include('../../prcd/qc/qc.php');
+    include('../prcd/qc.php');
     // $usr = $_SESSION['usr'];
 
     date_default_timezone_set('America/Mexico_City');
@@ -9,8 +9,8 @@
     $fechaSistema = strftime("%Y-%m-%d,%H:%M:%S");
 
     $idSession = $_SESSION['id'];
-    $annio = date("Y", $fechaSistema);
-    $mes = date("M", $fechaSistema);
+    $annio = date("Y", strtotime($fechaSistema));
+    $mes = date("m", strtotime($fechaSistema));
 
 //actividades no terminadas
 $sqlNOterminadas = "SELECT * FROM actividades WHERE responsable = '$idSession' AND MONTH(fecha) = '$mes' AND YEAR(fecha) = '$annio' AND estatus = 2";
@@ -21,7 +21,6 @@ $filaNOterminadas = $resultadoNOterminadas->num_rows;
 $sqlTerminadas = "SELECT * FROM actividades WHERE responsable = '$idSession' AND MONTH(fecha) = '$mes' AND YEAR(fecha) = '$annio' AND estatus = 1";
 $resultadoTerminadas = $conn->query($sqlTerminadas);
 $filaTerminadas = $resultadoTerminadas->num_rows;
-
 
     echo json_encode(array(
         'terminado'=>$filaTerminadas,

@@ -403,12 +403,12 @@ function contedoTerminados(){
         url: 'query/queryConteos.php',
         dataType:'json',
         success: function(data){
-          var jsonData = JSON.parse(data);
+          var jsonData = JSON.parse(JSON.stringify(data));
           var conteoTerminado = jsonData.terminado;
           var conteoNoTerminado = jsonData.noTerminado;
 
-          document.getElementById('flagTerminados').value = contedoTerminado;
-          document.getElementById('flagNoTerminados').value = contedoNoTerminado;
+          document.getElementById('flagTerminados').innerHTML = conteoTerminado;
+          document.getElementById('flagNoTerminados').innerHTML = conteoNoTerminado;
         }
     });
 }

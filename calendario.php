@@ -149,7 +149,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
 <!-- Custom styles for this template -->
 <link href="dashboard.css" rel="stylesheet">
 </head>
-<body onload="calendario();colaboradoresDashboard();queryUser_Tab(); areaQueryAgregar();tipoActividad();municipios();responsable(<?php echo $usr ?>);bloqueos();">
+<body onload="calendario();colaboradoresDashboard();queryUser_Tab(); areaQueryAgregar();tipoActividad();municipios();responsable(<?php echo $usr ?>);bloqueos();contedoTerminados()">
 
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="person" viewBox="0 0 16 16">
