@@ -342,7 +342,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
           <input type="text" id="web2" value="<?php echo $web ?>" hidden>
           <input type="text" id="perfilUsr" value="<?php echo $perfil ?>" hidden>
 
+        <?php
+        if ($perfil == 2){
+          echo '<div hidden>';
+        }
+        else{
+          echo '<div>';
+        }
 
+        ?>
+        
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
             <span><i class="bi bi-people-fill"></i> Usuarios</span>
             <a class="link-secondary" href="#" aria-label="Add a new report">
@@ -364,6 +373,17 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
             </li>
             
           </ul>
+        </div>
+
+        <?php
+        if ($perfil == 2){
+          echo '<div hidden>';
+        }
+        else{
+          echo '<div>';
+        }
+
+        ?>
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
             <span>Actividades</span>
             <a class="link-secondary" href="#" aria-label="Add a new report">
@@ -378,6 +398,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
               </a>
             </li>
           </ul>
+        </div>
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-dark text-uppercase">
             <span><i class="bi bi-columns-gap"></i> Departamentos</span>
             <!-- <a class="link-secondary" href="#" aria-label="Add a new report"> -->
@@ -393,12 +414,22 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
           <hr class="my-3">
 
           <ul class="nav flex-column mb-auto">
+            <?php
+              if ($perfil == 2){
+                echo '<div hidden>';
+              }
+              else{
+                echo '<div>';
+              }
+
+            ?>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="#">
                 <svg class="bi"><use xlink:href="#gear-wide-connected"/></svg>
                 Opciones
               </a>
             </li>
+            </div>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="prcd/sort.php">
                 <svg class="bi"><use xlink:href="#door-closed"/></svg>
@@ -732,11 +763,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
           <div class="row">
             
             
-              <div class="col-12" id=""><div class="card mb-3" style="max-width: 100%;"><div class="row g-0"><div class="col-md-4 my-auto"><h1 class="text-center">9</h1></div><div class="col-md-8 bg-primary"><div class="card-body"><h5 class="card-title text-light">Jueves</h5><p class="card-text text-light">Listado de actividades</p><p class="card-text text-light"><small class="text-body-light" id="datosNm'+dia+'"></small></p></div></div></div></div></div>
+              <div class="col-12" id=""><div class="card mb-3" style="max-width: 100%;"><div class="row g-0"><div class="col-md-4 my-auto"><h1 class="text-center">
+                <span id="mesIndividual"></span>
+              </h1></div><div class="col-md-8 bg-primary" id="colorCard"><div class="card-body"><h5 class="card-title text-light">
+                <span id="nombreIndividual"></span>
+
+                </h5><p class="card-text text-light">Listado de actividades</p><p class="card-text text-light"><small class="text-body-light" id="datosNm'+dia+'"></small></p></div></div></div></div></div>
               <p class="h3">
                 Orden del día
               </p>
-              <div class="container" id="contenedorFecha">
+              <div class="container" id="contenedorFecha2">
                 <!-- <dl>
                   <dt>06:00</dt>
                   <dd><hr></dd>

@@ -190,31 +190,25 @@ function revisarCalendario(dia,mes,annio,fechaISO) {
 
 }
 // function revisarCalendarioPorPersona(dia,mes,annio,fechaISO) {
-function revisarCalendarioPorPersona() {
+function revisarCalendarioPorPersona(id) {
   $('#modalIndividual2').modal('show');
-
-  // $.ajax(
-  //   {
-  //       type: "POST",
-  //       url: 'query/queryActividadesCalendarioIndividuales.php',
-  //       dataType:'html',
-  //       data:{
-  //         dia:dia,
-  //         mes:mes,
-  //         annio:annio,
-  //         fecha:fechaISO
-  //       },
-  //       success: function (data) {
-  //         $('#contenedorFecha').fadeIn(1000).html(data);
+  var fecha = new Date;
+  //var mes = fecha.getMonth();
+  var mes = fecha.toLocaleString('default', { month: 'long' });
+  document.getElementById('nombreIndividual').innerHTML = mes;
+   $.ajax(
+     {
+         type: "POST",
+         url: 'query/queryActividadesCalendarioIndividuales2.php',
+         data:{
+          id:id
+        },
+         dataType:'html',
+         success: function (data) {
+           $('#contenedorFecha2').fadeIn(1000).html(data);
           
-  //     },
-  //     error: function (xhr, status, error) {
-  //         console.error('Error en la solicitud AJAX:', status, error);
-  //     }
-
-  //   });
-
-
+       }
+     });
 }
 
 function queryUser(){

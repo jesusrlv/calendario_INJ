@@ -27,7 +27,7 @@
                     echo '
                     <div id="collapse'.$x.'" class="panel-collapse show">
                         <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center gap-2" href="#" onclick="revisarCalendarioPorPersona()">
+                        <a class="nav-link d-flex align-items-center gap-2" href="#" onclick="revisarCalendarioPorPersona('.$row['id'].')">
                         <span class="badge rounded-pill" style="background-color:'.$row["color"].'"><svg class="bi"><use xlink:href="#person"/></svg></span>
                         <span class="badge rounded-pill" style="background-color:'.$row["color"].'">'.$row['nombre'].'</span>
                         </a>
