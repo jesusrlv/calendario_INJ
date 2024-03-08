@@ -17,7 +17,24 @@ if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] 
 
     // Aquí puedes colocar el contenido de tu página para usuarios autenticados
 
-} else {
+} 
+else if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] == 1 && $_SESSION['calendario'] == 1) {
+    // El usuario está autenticado, puedes continuar con el contenido de la página
+    $usr = $_SESSION['id'];
+    $perfil = $_SESSION['perfil'];
+
+    $calendario = $_SESSION['calendario'];
+    $oic = $_SESSION['oic'];
+    $rCuentas = $_SESSION['rCuentas'];
+    $rescateEsp = $_SESSION['rescateEsp'];
+    $tickets = $_SESSION['tickets'];
+    $web = $_SESSION['web'];
+    $color = $_SESSION['color'];
+
+    // Aquí puedes colocar el contenido de tu página para usuarios autenticados
+
+} 
+else {
     // El usuario no está autenticado, redirigir a la página de inicio de sesión
     header("Location: prcd/sort.php");
     exit(); // Asegura que se detenga la ejecución del script después de la redirección
