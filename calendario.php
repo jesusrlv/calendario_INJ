@@ -2,7 +2,7 @@
 session_start();
 
 // Verificar si el usuario está autenticado
-if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['perfil'] == 2 && $_SESSION['calendario'] == 1) {
+if (isset($_SESSION['id']) && isset($_SESSION['perfil']) && $_SESSION['calendario'] == 1) {
     // El usuario está autenticado, puedes continuar con el contenido de la página
     $usr = $_SESSION['id'];
     $perfil = $_SESSION['perfil'];
