@@ -779,7 +779,6 @@ else {
       <div class="modal-body">
           <div class="row">
             
-            
               <div class="col-12" id=""><div class="card mb-3" style="max-width: 100%;"><div class="row g-0"><div class="col-md-4 my-auto"><h1 class="text-center">
                 <span id="mesIndividual"></span>
               </h1></div><div class="col-md-8 bg-primary" id="colorCard"><div class="card-body"><h5 class="card-title text-light">
@@ -790,14 +789,6 @@ else {
                 Orden del día
               </p>
               <div class="container" id="contenedorFecha2">
-                <!-- <dl>
-                  <dt>06:00</dt>
-                  <dd><hr></dd>
-                  <dd>- (Color) (Actividad) Evento 1</dd>
-                  <dt>06:30</dt>
-                  <dd><hr></dd>
-                  <dd>- white cold drink</dd>
-                </dl> -->
                
               </div>
               
