@@ -547,7 +547,7 @@ else {
       <div class="modal-body">
 
         <div class="d-grid gap-2 mb-3">
-          <button class="btn btn-outline-primary" type="button" id="revisarCalendario"><i class="bi bi-calendar-check"></i> Calendario</button>
+          <button class="btn btn-primary" type="button" id="revisarCalendario"><i class="bi bi-calendar-check"></i> Ver Calendario</button>
         </div>
 
         <div class="input-group mb-3">
@@ -709,16 +709,54 @@ else {
           <label for="exampleFormControlTextarea1" class="form-label">Observaciones</label>
           <textarea class="form-control" id="observacionesActividad" rows="3"></textarea>
         </div>
-
+        
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-newspaper"></i></span>
+          <select class="form-select" aria-label="Default select example" id="estatusActividad">
+            <option value="">Prensa</option>
+            <option value="0">No</option>
+            <option value="1">Si</option>
+          </select>
+        </div>
+        <hr>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
+          <select class="form-select" multiple aria-label="Multiple select example">
+            <option value="" selected>Personas convocadas</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-lines-fill"></i></span>
+            <input type="text" class="form-control" placeholder="Personas convocadas" aria-label="Username" aria-describedby="basic-addon1" disabled>
+        </div>
+        <hr>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
+          <select class="form-select" multiple aria-label="Multiple select example">
+            <option value="" selected>Departamentos que participan</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-lines-fill"></i></span>
+            <input type="text" class="form-control" placeholder="Departamentos que participan" aria-label="Username" aria-describedby="basic-addon1" disabled>
+        </div>
+        <hr>
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-clipboard-check-fill"></i></span>
-          <select class="form-select" aria-label="Default select example" id="estatusActividad">
+          <select class="form-select" aria-label="Default select example" id="estatusActividad" disabled>
             <option value="">Estatus</option>
             <option value="1">Terminado</option>
-            <option value="2">En proceso</option>
+            <option value="2" selected>En proceso</option>
             <option value="0">No realizado</option>
           </select>
         </div>
+
         
       </div>
       <div class="modal-footer">
