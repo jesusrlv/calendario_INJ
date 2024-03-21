@@ -460,7 +460,8 @@ else {
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Tablero de actividades</h1>
+        <h1><i class="bi bi-calendar4-week text-secondary"></i></h1>
+        
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
             <button type="button" class="btn btn-sm btn-outline-primary">Terminados
@@ -483,10 +484,14 @@ else {
           </button> -->
         </div>
       </div>
-      <h2>Mes: <span id="mesTop"></span> Año: <span id="annioTop"></span></h2>
 
       <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
       <div class="row">
+          <div class="col-12">
+            <div class="alert alert-primary text-center" role="alert">
+            <h1 class="h2">Tablero de actividades del mes de <span id="mesTop"></span>, del año <span id="annioTop"></span>.</h1>
+          </div>
+        </div>
 
 
         <div class="col-6">
