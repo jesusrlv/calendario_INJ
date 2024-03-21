@@ -1,6 +1,7 @@
 function calendario() {
   var date = new Date();
   var annio = date.getFullYear();
+  var annio2 = date.getFullYear();
   var mes1 = date.getMonth();
   var mes = mes1+1;
   var dia = date.getDate();
@@ -8,10 +9,11 @@ function calendario() {
     document.getElementById("calendarioGrid").innerHTML = "";
     var diasMes = new Date(annio, mes, 0).getDate();
     var diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-    var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre','Noviembre','Diciembre'];
+    var nombresMeses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre','Noviembre','Diciembre'];
     var indiceMes = new Date(annio, mes - 1, dia).getDay();
-    
     var indiceMes = mes - 1;
+    // Obtener el nombre del mes actual
+    var nombreMes = nombresMeses[mes];
 
     $.ajax(
       {
@@ -25,6 +27,9 @@ function calendario() {
           success: function (data) {
             var jsonData = JSON.parse(data);
             console.log('Respuesta JSON:', jsonData);
+
+            document.getElementById('mesTop').innerHTML = nombreMes;
+            document.getElementById('annioTop').innerHTML = annio2;
         
             // Verificar si jsonData es un array antes de intentar acceder a su longitud
             if (Array.isArray(jsonData)) {
@@ -75,6 +80,7 @@ function calendarioQuery() {
 
     var mes = document.getElementById('mes').value;
     var annio = document.getElementById('annio').value;
+    var annio2 = document.getElementById('annio').value;
 
     if(mes == "" || annio == ""){
       alert("Debes seleccionar los campos vacíos");
@@ -86,8 +92,8 @@ function calendarioQuery() {
     var diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
     var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre','Noviembre','Diciembre'];
     var indiceMes = new Date(annio, mes - 1, dia).getDay();
-    
     var indiceMes = mes - 1;
+    var nombreMes = meses[mes];
 
     $.ajax(
       {
@@ -101,6 +107,9 @@ function calendarioQuery() {
           success: function (data) {
             var jsonData = JSON.parse(data);
             console.log('Respuesta JSON:', jsonData);
+
+            document.getElementById('mesTop').innerHTML = nombreMes;
+            document.getElementById('annioTop').innerHTML = annio2;
         
             // Verificar si jsonData es un array antes de intentar acceder a su longitud
             if (Array.isArray(jsonData)) {
@@ -163,6 +172,12 @@ function modalAgregar(dia,mes,annio,fecha){
 }
 
 function revisarCalendario(dia,mes,annio,fechaISO) {
+
+  let days = ['Lunes','Martes','Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+  let d = new Date(fechaISO); //día que se imprimirá
+  console.log(days[d.getUTCDay()-1]);
+  let diaSemana = days[d.getUTCDay()-1];
+
   $('#agregarActividad').modal('hide');
   $('#modalCalendario').modal('show');
 
@@ -178,6 +193,8 @@ function revisarCalendario(dia,mes,annio,fechaISO) {
           fecha:fechaISO
         },
         success: function (data) {
+          document.getElementById('diaQuery').innerHTML = dia;
+          document.getElementById('semanaQuery').innerHTML = diaSemana;
           $('#contenedorFecha').fadeIn(1000).html(data);
           
       },

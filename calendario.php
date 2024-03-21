@@ -483,6 +483,7 @@ else {
           </button> -->
         </div>
       </div>
+      <h2>Mes: <span id="mesTop"></span> Año: <span id="annioTop"></span></h2>
 
       <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
       <div class="row">
@@ -778,8 +779,8 @@ else {
       <div class="modal-body">
           <div class="row">
             
-            
-              <div class="col-12" id=""><div class="card mb-3" style="max-width: 100%;"><div class="row g-0"><div class="col-md-4 my-auto"><h1 class="text-center">9</h1></div><div class="col-md-8 bg-primary"><div class="card-body"><h5 class="card-title text-light">Jueves</h5><p class="card-text text-light">Listado de actividades</p><p class="card-text text-light"><small class="text-body-light" id="datosNm'+dia+'"></small></p></div></div></div></div></div>
+            <!-- actividades por día de la semana -->
+              <div class="col-12" id=""><div class="card mb-3" style="max-width: 100%;"><div class="row g-0"><div class="col-md-4 my-auto"><h1 class="text-center" id="diaQuery"></h1></div><div class="col-md-8 bg-primary"><div class="card-body"><h5 class="card-title text-light" id="semanaQuery">Jueves</h5><p class="card-text text-light">Listado de actividades</p><p class="card-text text-light"><small class="text-body-light" id="datosNm'+dia+'"></small></p></div></div></div></div></div>
               <p class="h3">
                 Orden del día
               </p>
